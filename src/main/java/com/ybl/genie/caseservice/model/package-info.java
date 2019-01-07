@@ -1,0 +1,1 @@
+package com.ybl.genie.caseservice.model;
