@@ -1,6 +1,6 @@
 package com.ybl.genie.caseservice.model;
 
-import com.ybl.genie.caseservice.constant.CaseCategory;
+import com.ybl.genie.caseservice.model.CRM.ServiceModule;
 
 public class CaseForm extends ServiceModule {
 
@@ -10,7 +10,7 @@ public class CaseForm extends ServiceModule {
     private String remarks;
 
     public CaseForm(long issueTypeId, String productName, String caseType,
-                    String issueTypeName, CaseCategory caseCategory,
+                    String issueTypeName, String caseCategory,
                     long caseCategoryId, String mdmId,
                     String referenceNo, String custId, String remarks) {
         super(issueTypeId, productName, caseType, issueTypeName, caseCategory, caseCategoryId);

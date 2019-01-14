@@ -1,4 +1,4 @@
-package com.ybl.genie.caseservice.model;
+package com.ybl.genie.caseservice.model.CRM;
 
 import com.ybl.genie.caseservice.constant.CaseCategory;
 
@@ -21,9 +21,8 @@ public class ServiceModule {
     @Column(name="issuetypename")
     private String issueTypeName;
 
-    @Enumerated(EnumType.STRING)
     @Column(name="casecategory")
-    private CaseCategory caseCategory;
+    private String caseCategory;
 
     @Column(name="casecategoryid")
     private long caseCategoryId;
@@ -32,7 +31,7 @@ public class ServiceModule {
     }
 
     public ServiceModule(long issueTypeId, String productName,
-                         String caseType, String issueTypeName, CaseCategory caseCategory, long caseCategoryId) {
+                         String caseType, String issueTypeName, String caseCategory, long caseCategoryId) {
         this.issueTypeId = issueTypeId;
         this.productName = productName;
         this.caseType = caseType;
@@ -73,11 +72,11 @@ public class ServiceModule {
         this.issueTypeName = issueTypeName;
     }
 
-    public CaseCategory getCaseCategory() {
+    public String getCaseCategory() {
         return caseCategory;
     }
 
-    public void setCaseCategory(CaseCategory caseCategory) {
+    public void setCaseCategory(String caseCategory) {
         this.caseCategory = caseCategory;
     }
 

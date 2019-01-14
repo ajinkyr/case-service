@@ -2,7 +2,7 @@ package com.ybl.genie.caseservice.constant;
 
 public enum CaseCategory {
 
-    COMPLAINT("Compliant"),
+    COMPLAINT("Complaint"),
     REQUEST("Request"),
     QUERY("Query"),
     FEEDBACK("Feedback");

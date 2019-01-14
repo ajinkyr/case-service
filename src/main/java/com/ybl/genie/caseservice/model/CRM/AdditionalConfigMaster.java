@@ -1,16 +1,17 @@
-package com.ybl.genie.caseservice.model;
+package com.ybl.genie.caseservice.model.CRM;
 
-import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-@Embeddable
-public class AdditionalConfigFields {
+@Table(name="additional_config_master")
+public class AdditionalConfigMaster {
 
    private long issueTypeId;
    private String issueTypeName;
    private String fieldName;
    private int isFieldReq;
 
-    public AdditionalConfigFields(long issueTypeId, String issueTypeName, String fieldName, int isFieldReq) {
+    public AdditionalConfigMaster(long issueTypeId, String issueTypeName, String fieldName, int isFieldReq) {
         this.issueTypeId = issueTypeId;
         this.issueTypeName = issueTypeName;
         this.fieldName = fieldName;

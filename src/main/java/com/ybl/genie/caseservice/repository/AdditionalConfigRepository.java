@@ -1,13 +1,13 @@
 package com.ybl.genie.caseservice.repository;
 
-import com.ybl.genie.caseservice.model.AdditionalConfigFields;
+import com.ybl.genie.caseservice.model.CRM.AdditionalConfigMaster;
 
 import java.util.List;
 
 public interface AdditionalConfigRepository {
 
-    List<AdditionalConfigFields> getByIssueTypeID(long issueTypeId);
+    List<AdditionalConfigMaster> getAdditionalConfig(long issueTypeId);
 
-    List<AdditionalConfigFields> getAdditionalConfigFields();
 
+    List<Object> getAdditionalFields(long issueTypeId);
 }

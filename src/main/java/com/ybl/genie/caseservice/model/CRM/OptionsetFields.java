@@ -1,8 +1,10 @@
-package com.ybl.genie.caseservice.model;
+package com.ybl.genie.caseservice.model.CRM;
 
-import javax.persistence.Embeddable;
 
-@Embeddable
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Table(name="option_set_master")
 public class OptionsetFields {
 
     private String attributeName;

@@ -1,13 +1,11 @@
 package com.ybl.genie.caseservice.resource;
 
-import com.ybl.genie.caseservice.model.ServiceModule;
+import com.ybl.genie.caseservice.model.CRM.ServiceModule;
+import com.ybl.genie.caseservice.model.CRM.response.CaseModuleResponse;
+import com.ybl.genie.caseservice.service.AdditionalConfigService;
 import com.ybl.genie.caseservice.service.CaseModuleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,12 +16,27 @@ public class CaseConfigResource {
     @Autowired
     private CaseModuleService caseModuleService;
 
-    @GetMapping
-    public List<ServiceModule> getProductList(@RequestParam String productName){
-        return caseModuleService.getServiceModulesByProductName(productName);
+    @Autowired
+    private AdditionalConfigService additionalConfigService;
+
+    @GetMapping("/modules/{productName}")
+    public CaseModuleResponse getModules(@PathVariable String productName){
+        return caseModuleService.getModulesByProductName(productName);
     }
 
+    @GetMapping("/module/{issueTypeId}")
+    public ServiceModule getModule(@PathVariable long issueTypeId){
+        return caseModuleService.getModuleByIssueTypeId(issueTypeId);
+    }
 
+    @GetMapping("/products")
+    public List<String> getProductList(){
+        return caseModuleService.getProductList();
+    }
 
+    @GetMapping("/additionalfields/{issueTypeId}")
+    public List<Object> getAdditionalFields(@PathVariable long issueTypeId){
+        return additionalConfigService.getAdditionalFields(issueTypeId);
+    }
 
 }

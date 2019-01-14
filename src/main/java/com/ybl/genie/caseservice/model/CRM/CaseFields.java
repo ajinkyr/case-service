@@ -1,22 +1,23 @@
-package com.ybl.genie.caseservice.model;
+package com.ybl.genie.caseservice.model.CRM;
 
-import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
-@Embeddable
+@Table(name="case_field_master")
 public class CaseFields {
 
     private String entityName;
     private String entityDisplayName;
     private String attributeDisplayName;
     private String attributeName;
-    private String type;
+    private String attributeType;
 
     public CaseFields(String entityName, String entityDisplayNmae, String attributeDisplayName, String attributeName, String type) {
         this.entityName = entityName;
         this.entityDisplayName = entityDisplayNmae;
         this.attributeDisplayName = attributeDisplayName;
         this.attributeName = attributeName;
-        this.type = type;
+        this.attributeType = type;
     }
 
     public String getEntityName() {
@@ -35,7 +36,7 @@ public class CaseFields {
         return attributeName;
     }
 
-    public String getType() {
-        return type;
+    public String getAttributeType() {
+        return attributeType;
     }
 }
